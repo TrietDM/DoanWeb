@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("VNexpress", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <nav>
+                <div class="search">
+                    <input type="search" placeholder="Search..." />
+                    <button>Tìm kiếm</button>
+                </div>
+            </nav>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>&copy; @DateTime.Now.Year </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Danh muc
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul><a class="dropdown-item" href="#">Tin trong ngay</a></ul>
+                            <ul><a class="dropdown-item" href="#">Tin tuc suc khoe</a></ul>
+                            <ul><a class="dropdown-item" href="#">Tin tuc chinh tri</a></ul>
+                        </div>
+                    </li>
+                    <li>@Html.ActionLink("Trang chu", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Tin khu vuc phia Bac ", "Bac", "Home")</li>
+                    <li>@Html.ActionLink("Tin khu vuc phie Nam", "Nam", "Home")</li>
+                    <li>@Html.ActionLink("Tai khoan", "Account", "Home")</li>
+
+                </ul>
+            </div>
+
+
+        </div>
+        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+           
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
